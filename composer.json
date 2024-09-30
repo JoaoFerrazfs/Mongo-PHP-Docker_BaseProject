@@ -1,5 +1,12 @@
 {
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
     "require": {
-        "mongodb/mongodb": "*"
+        "leroy-merlin-br/mongolid": "3.7",
+        "psy/psysh": "^0.12.4",
+        "symfony/var-dumper": "^6.4"
     }
 }

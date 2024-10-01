@@ -1,6 +1,7 @@
 <?php
-// router.php
 
+use App\Pokemon\Controller\PokemonController;
+use App\Services\NewModelService;
 use App\Trainer\Controller\TrainerController;
 
 function route($uri) {
@@ -15,6 +16,14 @@ function route($uri) {
         case '/trainers/create':
             $controller = new TrainerController();
             $controller->create();
+            break;
+        case '/pokemons':
+            $controller = new PokemonController();
+            $controller->index();
+            break;
+        case '/pokemons/create':
+            $controller = new PokemonController();
+            NewModelService::createPokemon();
             break;
         default:
             http_response_code(404);

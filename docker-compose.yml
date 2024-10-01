@@ -1,4 +1,4 @@
-version: '3.8'  # Adicione a versão do compose
+version: '3.8'
 services:
   web:
     build: .
@@ -7,9 +7,14 @@ services:
     volumes:
       - .:/var/www/html
     environment:
-      - APACHE_DOCUMENT_ROOT=/var/www/html/public  # Adiciona a variável de ambiente
+      - APACHE_DOCUMENT_ROOT=/var/www/html/public
 
   mongo:
     image: mongo
     ports:
       - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+
+volumes:
+  mongo-data:

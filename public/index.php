@@ -7,7 +7,9 @@ use Mongolid\Connection\Manager;
 use Mongolid\Connection\Connection;
 
 $manager = new Manager();
-$connection = $manager->setConnection(new Connection('mongodb://mongo:27017'));
+$connection = new Connection('mongodb://mongo:27017/jp');
+$connection = $manager->setConnection($connection);
+$manager->getClient()->selectDatabase('jp');
 
 if (!$connection) {
     echo "Erro ao estabelecer conexão com o MongoDB.";

@@ -4,8 +4,14 @@
             "App\\": "src/"
         }
     },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/leroy-merlin-br/mongolid"
+        }
+    ],
     "require": {
-        "leroy-merlin-br/mongolid": "3.7",
+        "leroy-merlin-br/mongolid": "dev-refactor/change-annotations-in-dataMapper-folder",
         "psy/psysh": "^0.12.4",
         "symfony/var-dumper": "^6.4"
     }
